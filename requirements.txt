@@ -1,0 +1,33 @@
+# ########################################################
+#
+# Requirements for Backup program virtual environment
+#
+# File:       requirements.txt
+# Author:     Lorn B Kerr
+# Copyright:  (c) 2022,2023 Lorn B Kerr
+# License:    MIT, see file LICENSE
+#
+# ########################################################
+
+# local project library
+-e ../lbk_library/
+
+# Run time requirements
+PySide6         # gui base
+platformdirs    # cross platform directory structure.
+
+# Testing Requirements
+black
+coverage
+flake8
+flake8-pyproject
+isort
+psutil
+PyInstaller
+pydocstyle
+pydocstyle[toml]
+pytest
+pytest_cover
+pytest-mock
+pytest-qt
+

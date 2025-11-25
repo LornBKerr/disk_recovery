@@ -1,6 +1,6 @@
 # Local additions
 docs/
-Doxyfile
+#Doxyfile
 enviroment_list.*
 github_token
 *~

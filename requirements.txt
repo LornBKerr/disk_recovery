@@ -1,6 +1,6 @@
 # ########################################################
 #
-# Requirements for Backup program virtual environment
+# Requirements for DiskRecovery program virtual environment
 #
 # File:       requirements.txt
 # Author:     Lorn B Kerr
@@ -14,7 +14,7 @@
 
 # Run time requirements
 PySide6         # gui base
-platformdirs    # cross platform directory structure.
+psutil
 
 # Testing Requirements
 black
@@ -22,7 +22,6 @@ coverage
 flake8
 flake8-pyproject
 isort
-psutil
 PyInstaller
 pydocstyle
 pydocstyle[toml]

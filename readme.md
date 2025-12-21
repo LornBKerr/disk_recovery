@@ -12,8 +12,10 @@ I wrote (am writing) this python program to see if I can recover anything.
 
 **NO OBLIGATIONS ON MY PART.**
 
-This program reads and writes raw sectors to the from/to the drive.
-Admin rights are required. The result of the crash ended up with a disk
+This program reads and writes raw sectors from/to the drive.
+Admin rights are required.
+
+The result of the crash ended up with a disk
 that appeared to be total empty. It was visible to the directory listing
 as an empty drive.
 

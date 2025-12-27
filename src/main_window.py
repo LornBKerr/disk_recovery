@@ -16,7 +16,7 @@ from PySide6.QtWidgets import (
 )
 from ui_main_form import Ui_MainWindow
 
-file_name = "main_window_table.py"
+file_name = "main_window.py"
 file_version = "0.1"
 changes = {
     "0.0": "Project directory structure set",
@@ -34,7 +34,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.usb_drives = []  # the set of usb drives
-
+        self.setWindowTitle("Disk Recovery")
         self.initialize_tab_widget()
         DisksTable(self.disk_listing, self)
 

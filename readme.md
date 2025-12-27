@@ -20,7 +20,7 @@ The program is written in Python, using version 3.14.2 or later. It is primarily
 
 On starting up the program, we get the opening screen,
 
-<img src="/images/opening-screen.png" alt="Opening Screenshot" style="height: 100px; width:100px;"/>
+<img src="/images/opening-screen.png" alt="Opening Screenshot" style="height: 980px; width:870px;"/>
 
 This lists the available usb drives. Any NVMe system drives, which may show up as usb drives are excluded. Selecting one of the drives will show a number of additional tabs and open the Boot Parameter Table tab.
 

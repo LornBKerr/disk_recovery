@@ -128,6 +128,6 @@ class DisksTable:
             text = text[: len(text) - 1]
         radio_button = QRadioButton(text)
         radio_button.clicked.connect(
-            lambda: self.parent_window.action_button_click(text)
+            lambda: self.parent_window.usb_button_clicked(text)
         )
         return radio_button

@@ -47,7 +47,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tab_widget.setTabVisible(1, False)
         self.tab_widget.setCurrentIndex(0)
 
-    def action_button_click(self, button_text: str):
+    def usb_button_clicked(self, button_text: str):
         """
         Handle the disk table button click selecting an usb drive.
 

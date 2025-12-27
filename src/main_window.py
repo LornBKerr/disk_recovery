@@ -55,4 +55,4 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             button_text: the name of the clicked button.
         """
         self.tab_widget.setTabVisible(1, True)
-        self.tab_widget.setCurrentIndex.(1)
+        self.tab_widget.setCurrentIndex(1)

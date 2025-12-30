@@ -45,7 +45,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="OpeningTab">
      <attribute name="title">
@@ -113,29 +113,23 @@
        <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QFrame" name="header_frame">
-      <property name="geometry">
-       <rect>
-        <x>25</x>
-        <y>60</y>
-        <width>741</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
-     </widget>
      <widget class="QTableWidget" name="bpb_table">
       <property name="geometry">
        <rect>
-        <x>25</x>
-        <y>101</y>
+        <x>30</x>
+        <y>122</y>
         <width>741</width>
-        <height>391</height>
+        <height>511</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="bpb_titles">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>741</width>
+        <height>62</height>
        </rect>
       </property>
      </widget>

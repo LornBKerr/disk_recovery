@@ -10,10 +10,12 @@ License:    MIT, see file LICENSE
 Version:    0.1
 """
 
-from disks_table import DisksTable
 from PySide6.QtWidgets import (
     QMainWindow,
 )
+
+from bios_paraameters_display_table import BiosParameterDisplay
+from disks_table import DisksTable
 from ui_main_form import Ui_MainWindow
 
 file_name = "main_window.py"
@@ -37,6 +39,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setWindowTitle("Disk Recovery")
         self.initialize_tab_widget()
         DisksTable(self.disk_listing, self)
+        BiosParameterTable(self.bpb_titles, self.bpb_table, self)
 
         self.show()
 

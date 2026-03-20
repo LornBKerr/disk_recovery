@@ -1,5 +1,5 @@
 """
-Sector level read USB connected drives on a Fedora Linux System.
+Sector level read drive images on a Fedora Linux System.
 
 Only VFAT drives are handled.
 
@@ -12,15 +12,15 @@ Version:    0.1
 
 from PySide6.QtWidgets import QMainWindow
 
-from bios_parameters_display import BiosParameterDisplay
-from disks_table import DisksTable
+##from bios_parameters_display import BiosParameterDisplay
+from drives_table import DrivesTable
 from ui_main_form import Ui_MainWindow
 
 file_name = "main_window.py"
 file_version = "0.1"
 changes = {
     "0.0": "Project directory structure set",
-    "0.1": "Show 'disk select' tab.",
+    "0.1": "Show 'Drive select' tab.",
 }
 
 
@@ -30,29 +30,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     """
 
     def __init__(self) -> None:
-        """Initialize and run the disk repair program."""
+        """Initialize and run the drive inspection program."""
         super().__init__()
         self.setupUi(self)
-        self.current_drive: str = None
-        """The drive selected and being proeccessed."""
-        self.usb_drives = []
-        """The set of usb drives available."""
+        self.selected_drive_image: str = None
+        """The drive image selected and being proeccessed."""
+        self.drives_images = []
+        """The set of drive images available."""
 
         self.setWindowTitle("Disk Recovery")
         self.initialize_tab_widget()
-        DisksTable(self.disk_listing, self)
-        self.bios_param_display = BiosParameterDisplay(self, self.current_drive)
+        DrivesTable(self.drive_listing, self)
+##        self.bios_param_display = BiosParameterDisplay(self, self.selected_drive_image)
 
         self.show()
 
     def initialize_tab_widget(self) -> None:
         """Set the tab names and number of tabs required."""
-        self.tab_widget.setTabText(0, "Select Disk")
+        self.tab_widget.setTabText(0, "Select Drive")
         self.tab_widget.setTabText(1, "BIOS Parameter Block")
         self.tab_widget.setTabVisible(1, False)
         self.tab_widget.setCurrentIndex(0)
 
-    def usb_button_clicked(self, button_text: str):
+    def drive_button_clicked(self, button_text: str):
         """
         Handle the disk table button click selecting an usb drive.
 
@@ -61,5 +61,5 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         self.tab_widget.setTabVisible(1, True)
         self.tab_widget.setCurrentIndex(1)
-        self.current_drive = button_text
-        self.bios_param_display.fill_table()
+        self.selected_drive_image = button_text
+#        self.bios_param_display.fill_table()

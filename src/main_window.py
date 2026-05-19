@@ -12,7 +12,7 @@ Version:    0.1
 
 from PySide6.QtWidgets import QMainWindow
 
-##from bios_parameters_display import BiosParameterDisplay
+from bios_parameters_display import BiosParameterDisplay
 from drives_table import DrivesTable
 from ui_main_form import Ui_MainWindow
 
@@ -41,7 +41,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setWindowTitle("Disk Recovery")
         self.initialize_tab_widget()
         DrivesTable(self.drive_listing, self)
-##        self.bios_param_display = BiosParameterDisplay(self, self.selected_drive_image)
 
         self.show()
 
@@ -54,7 +53,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def drive_button_clicked(self, button_text: str):
         """
-        Handle the disk table button click selecting an usb drive.
+        Handle the disk table button click selecting a drive image.
 
         Parameters:
             button_text: the name of the clicked button.
@@ -62,4 +61,5 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tab_widget.setTabVisible(1, True)
         self.tab_widget.setCurrentIndex(1)
         self.selected_drive_image = button_text
+        self.bios_param_display = BiosParameterDisplay(self, self.selected_drive_image)
 #        self.bios_param_display.fill_table()

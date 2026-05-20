@@ -10,10 +10,9 @@ License:    MIT, see file LICENSE
 Version:    0.1
 """
 
-from PySide6.QtWidgets import QMainWindow
-
 from bios_parameters_display import BiosParameterDisplay
 from drives_table import DrivesTable
+from PySide6.QtWidgets import QMainWindow
 from ui_main_form import Ui_MainWindow
 
 file_name = "main_window.py"
@@ -62,4 +61,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tab_widget.setCurrentIndex(1)
         self.selected_drive_image = button_text
         self.bios_param_display = BiosParameterDisplay(self, self.selected_drive_image)
+
+
 #        self.bios_param_display.fill_table()

@@ -18,9 +18,9 @@ from PySide6.QtWidgets import QApplication
 file_name = "DiskRecovery.py"
 file_version = "0.0"
 changes = {
-            "0.0": "Project directory structure set",
-            "0.1": "Show 'Select Drive' tab.",
-           }
+    "0.0": "Project directory structure set",
+    "0.1": "Show 'Select Drive' tab.",
+}
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

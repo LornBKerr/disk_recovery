@@ -12,23 +12,25 @@ License:    MIT, see file LICENSE
 Version:    0.1
 """
 
-from datetime import datetime
 import glob
 import os
-
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import (
-    QRadioButton,
-    QTableWidgetItem,
-)
+from datetime import datetime
 
 from format_int_string import IntString
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (
+    QMainWindow,
+    QRadioButton,
+    QTableWidget,
+    QTableWidgetItem,
+)
 
 file_name = "drives_table.py"
 file_version = "0.1"
 changes = {
     "0.1": "Define tab 1 of the table",
 }
+
 
 class DrivesTable:
     """Display the disk selection table on the 'Select Disk' Tab."""
@@ -52,19 +54,20 @@ class DrivesTable:
     def get_drives(self) -> None:
         """
         Get the available drive images from the system.
-        
+
         Drive images are expected to be in folder '../drive_images' and
-        have a suffix of '.drv_img'. Name, file date, and file size are 
+        have a suffix of '.drv_img'. Name, file date, and file size are
         collected for each file found. Format of date and time may vary.
 
         Example:
             ["sda.drv_img", "3/10/2026, 1:12:38 PM", "62.0 GB"]
         """
+
         def sortFunc(a):
             return a[0]
-            
+
         self.drive_images = []
-        for file in glob.glob('**/drive_images/*.drv_img', recursive=True):
+        for file in glob.glob("**/drive_images/*.drv_img", recursive=True):
             filesize = IntString.format(os.path.getsize(file), True, 2)
             dt_object = datetime.fromtimestamp(os.path.getmtime(file))
             # Format as "YYYY-MM-DD HH:MM:SS"
@@ -90,13 +93,17 @@ class DrivesTable:
         self.drive_listing.setItem(row, col + 1, item)
 
         # show the drive images
-        if(len(self.drive_images) > 1):
+        if len(self.drive_images) > 1:
             for row in range(1, len(self.drive_images)):
                 self.drive_listing.insertRow(row)
                 button = self.get_radio_button(self.drive_images[row][0])
                 self.drive_listing.setCellWidget(row, 0, button)
-                self.drive_listing.setItem(row, 1, QTableWidgetItem(self.drive_images[row][1]))
-                self.drive_listing.setItem(row, 2, QTableWidgetItem(self.drive_images[row][2]))
+                self.drive_listing.setItem(
+                    row, 1, QTableWidgetItem(self.drive_images[row][1])
+                )
+                self.drive_listing.setItem(
+                    row, 2, QTableWidgetItem(self.drive_images[row][2])
+                )
 
             # resize the table to the entry sizes plus spacing.
             self.drive_listing.resizeColumnsToContents()
@@ -141,8 +148,5 @@ class DrivesTable:
         if truncate:
             text = text[: len(text) - 1]
         radio_button = QRadioButton(text)
-        radio_button.clicked.connect(
-            lambda: self.parent.drive_button_clicked(text)
-        )
+        radio_button.clicked.connect(lambda: self.parent.drive_button_clicked(text))
         return radio_button
-

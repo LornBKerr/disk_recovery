@@ -2,22 +2,40 @@
 Convert integers to fomatted strings.
 
 Retrieved from:
-//https://stackoverflow.com/questions/12523586/python-format-size-application-converting-b-to-kb-mb-gb-tbStack Overflow.com question 125235
-answer by Mitch McMabers about a thrid down on the page.
+stackoverflow.com/questions/12523586/
+   python-format-size-application-converting-b-o-b-mb-gb-tbStack Overflow.
+   com question 125235
+answer by Mitch McMabers about a third down on the page.
 
 Edited to match my style.
 """
 
 from typing import List, Union
 
+
 class IntString:
     METRIC_LABELS: List[str] = ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
-    BINARY_LABELS: List[str] = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"]
-    PRECISION_OFFSETS: List[float] = [0.5, 0.05, 0.005, 0.0005] # PREDEFINED FOR SPEED.
-    PRECISION_FORMATS: List[str] = ["{}{:.0f} {}", "{}{:.1f} {}", "{}{:.2f} {}", "{}{:.3f} {}"] # PREDEFINED FOR SPEED.
+    BINARY_LABELS: List[str] = [
+        "B",
+        "KiB",
+        "MiB",
+        "GiB",
+        "TiB",
+        "PiB",
+        "EiB",
+        "ZiB",
+        "YiB",
+    ]
+    PRECISION_OFFSETS: List[float] = [0.5, 0.05, 0.005, 0.0005]  # PREDEFINED FOR SPEED.
+    PRECISION_FORMATS: List[str] = [
+        "{}{:.0f} {}",
+        "{}{:.1f} {}",
+        "{}{:.2f} {}",
+        "{}{:.3f} {}",
+    ]  # PREDEFINED FOR SPEED.
 
     @staticmethod
-    def format(num: Union[int, float], metric: bool=False, precision: int=1) -> str:
+    def format(num: Union[int, float], metric: bool = False, precision: int = 1) -> str:
         """
         Human-readable formatting of bytes, using binary (powers of 1024)
         or metric (powers of 1000) representation.
@@ -25,7 +43,9 @@ class IntString:
 
         assert isinstance(num, (int, float)), "num must be an int or float"
         assert isinstance(metric, bool), "metric must be a bool"
-        assert isinstance(precision, int) and precision >= 0 and precision <= 3, "precision must be an int (range 0-3)"
+        assert (
+            isinstance(precision, int) and precision >= 0 and precision <= 3
+        ), "precision must be an int (range 0-3)"
 
         unit_labels = IntString.METRIC_LABELS if metric else IntString.BINARY_LABELS
         last_label = unit_labels[-1]
@@ -33,7 +53,7 @@ class IntString:
         unit_step_thresh = unit_step - IntString.PRECISION_OFFSETS[precision]
 
         is_negative = num < 0
-        if is_negative: # Faster than ternary assignment or always running abs().
+        if is_negative:  # Faster than ternary assignment or always running abs().
             num = abs(num)
 
         for unit in unit_labels:
@@ -52,4 +72,6 @@ class IntString:
                 # and further down in the decimals, so it doesn't matter at all.
                 num /= unit_step
 
-        return IntString.PRECISION_FORMATS[precision].format("-" if is_negative else "", num, unit)
+        return IntString.PRECISION_FORMATS[precision].format(
+            "-" if is_negative else "", num, unit
+        )

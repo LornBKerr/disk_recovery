@@ -40,7 +40,6 @@ class IntString:
         Human-readable formatting of bytes, using binary (powers of 1024)
         or metric (powers of 1000) representation.
         """
-
         assert isinstance(num, (int, float)), "num must be an int or float"
         assert isinstance(metric, bool), "metric must be a bool"
         assert (

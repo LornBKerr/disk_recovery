@@ -1,4 +1,6 @@
 # Local additions
+# generated form, ignore.
+ui_main_form.py
 docs/
 #Doxyfile
 enviroment_list.*

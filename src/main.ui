@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>897</width>
+    <width>900</width>
     <height>810</height>
    </rect>
   </property>
@@ -38,14 +38,14 @@
    <widget class="QTabWidget" name="tab_widget">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>20</x>
       <y>60</y>
-      <width>831</width>
+      <width>860</width>
       <height>681</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="OpeningTab">
      <attribute name="title">
@@ -94,9 +94,9 @@
      <widget class="QLabel" name="BPT_title">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>0</x>
         <y>20</y>
-        <width>731</width>
+        <width>860</width>
         <height>20</height>
        </rect>
       </property>
@@ -116,9 +116,9 @@
      <widget class="QTableWidget" name="bpb_table">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>122</y>
-        <width>741</width>
+        <width>820</width>
         <height>511</height>
        </rect>
       </property>
@@ -126,9 +126,9 @@
      <widget class="QTableWidget" name="bpb_titles">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>60</y>
-        <width>741</width>
+        <width>820</width>
         <height>62</height>
        </rect>
       </property>

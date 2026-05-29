@@ -7,7 +7,7 @@ File:       DiskRepair.py
 Author:     Lorn B Kerr
 Copyright:  (c) 2025 Lorn B Kerr
 License:    MIT, see file LICENSE
-Version:    0.1
+Version:    0.2
 """
 
 import sys
@@ -20,6 +20,7 @@ file_version = "0.0"
 changes = {
     "0.0": "Project directory structure set",
     "0.1": "Show 'Select Drive' tab.",
+    "0.2": "Added 'Bios Parameters' tab.",
 }
 
 if __name__ == "__main__":

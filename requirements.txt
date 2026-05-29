@@ -13,8 +13,10 @@
 -e ../lbk_library/
 
 # Run time requirements
+hexdump
 PySide6         # gui base
 psutil
+pyusb
 
 # Testing Requirements
 black

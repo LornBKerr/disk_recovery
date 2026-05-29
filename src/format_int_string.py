@@ -3,8 +3,8 @@ Convert integers to fomatted strings.
 
 Retrieved from:
 stackoverflow.com/questions/12523586/
-   python-format-size-application-converting-b-o-b-mb-gb-tbStack Overflow.
-   com question 125235
+  python-format-size-application-converting-b-o-b-mb-gb-tbStack Overflow.
+  com question 125235
 answer by Mitch McMabers about a third down on the page.
 
 Edited to match my style.

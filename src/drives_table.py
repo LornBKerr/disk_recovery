@@ -28,7 +28,7 @@ from PySide6.QtWidgets import (
 file_name = "drives_table.py"
 file_version = "0.1"
 changes = {
-    "0.1": "Define tab 1 of the table",
+    "0.1": "Define tab 1 showing available drives",
 }
 
 

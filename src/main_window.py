@@ -1,16 +1,16 @@
 """
 Sector level read drive images on a Fedora Linux System.
 
-Only VFAT drives are handled.
+Only FAT32 and VFAT drives are handled.
 
 File:       main.py
 Author:     Lorn B Kerr
 Copyright:  (c) 2025 Lorn B Kerr
 License:    MIT, see file LICENSE
-Version:    0.1
+Version:    0.2
 """
 
-#from bios_parameters_display import BiosParameterDisplay
+from bios_parameters_display import BiosParameterDisplay
 from drives_table import DrivesTable
 from PySide6.QtWidgets import QMainWindow
 from ui_main_form import Ui_MainWindow
@@ -20,6 +20,7 @@ file_version = "0.1"
 changes = {
     "0.0": "Project directory structure set",
     "0.1": "Show 'Drive select' tab.",
+    "0.2": "Added 'Bios Parameters' tab.",
 }
 
 
@@ -61,4 +62,3 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tab_widget.setCurrentIndex(1)
         self.selected_drive_image = button_text
         self.bios_param_display = BiosParameterDisplay(self, self.selected_drive_image)
-#        self.bios_param_display.fill_table()

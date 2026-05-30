@@ -47,8 +47,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def initialize_tab_widget(self) -> None:
         """Set the tab names and number of tabs required."""
         self.tab_widget.setTabText(0, "Select Drive")
+
         self.tab_widget.setTabText(1, "BIOS Parameter Block")
         self.tab_widget.setTabVisible(1, False)
+
+        self.tab_widget.setTabText(2, "File System Info")
+        self.tab_widget.setTabVisible(2, False)
+        
         self.tab_widget.setCurrentIndex(0)
 
     def drive_button_clicked(self, button_text: str):
@@ -59,6 +64,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             button_text: the name of the clicked button.
         """
         self.tab_widget.setTabVisible(1, True)
+        self.tab_widget.setTabVisible(2, True)
         self.tab_widget.setCurrentIndex(1)
         self.selected_drive_image = button_text
         self.bios_param_display = BiosParameterDisplay(self, self.selected_drive_image)
+

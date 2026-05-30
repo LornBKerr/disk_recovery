@@ -45,7 +45,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="OpeningTab">
      <attribute name="title">
@@ -133,6 +133,11 @@
        </rect>
       </property>
      </widget>
+    </widget>
+    <widget class="QWidget" name="FileSystemInfo">
+     <attribute name="title">
+      <string>Tab 3</string>
+     </attribute>
     </widget>
    </widget>
    <widget class="QDialogButtonBox" name="buttonBox">

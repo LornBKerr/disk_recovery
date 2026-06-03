@@ -19,7 +19,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QMainWindow, QTableWidgetItem
 
 file_name = "boot_parameters_display.py"
-ile_version = "0.1"
+file_version = "0.2"
 changes = {
     "0.0": "Project directory structure set",
     "0.1": "initial table created.",

@@ -45,7 +45,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="OpeningTab">
      <attribute name="title">
@@ -138,6 +138,48 @@
      <attribute name="title">
       <string>Tab 3</string>
      </attribute>
+     <widget class="QTableWidget" name="fsi_titles">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>820</width>
+        <height>62</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="fsi_table">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>122</y>
+        <width>820</width>
+        <height>511</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="FileSystemInfo_title">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>860</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Filesystem Information</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QDialogButtonBox" name="buttonBox">

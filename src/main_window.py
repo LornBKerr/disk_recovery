@@ -12,6 +12,7 @@ Version:    0.2
 
 from bios_parameters_display import BiosParameterDisplay
 from drives_table import DrivesTable
+from filesystem_info_display import FileSystemInfoDisplay
 from PySide6.QtWidgets import QMainWindow
 from ui_main_form import Ui_MainWindow
 
@@ -68,4 +69,5 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tab_widget.setCurrentIndex(1)
         self.selected_drive_image = button_text
         self.bios_param_display = BiosParameterDisplay(self, self.selected_drive_image)
+        self.filesystem_info_display = FileSystemInfoDisplay(self, self.selected_drive_image)
 

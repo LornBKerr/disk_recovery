@@ -1,7 +1,7 @@
 """
 Values to define parameters of the bios.
 
-ost disks have 2 boot records, 1 always at sector 0, the second usually
+Most disks have 2 boot records, 1 always at sector 0, the second usually
 at sector 6.
 
 Only FAT32/VFat type drives are handled.
@@ -15,12 +15,12 @@ Version:    0.2
 
 from bpb import boot_param_block
 
-file_name = "boot_record.py.py"
+file_name = "boot_record.py"
 ile_version = "0.1"
 changes = {
     "0.0": "Project directory structure set",
     "0.1": "Read Access to all parameter block values.",
-    "0.02": "Change return type of BS_VolId() from hex int to int.",
+    "0.2": "Change return type of BS_VolId() from hex int to int.",
 }
 
 

@@ -16,7 +16,7 @@ Version:    0.2
 from bpb import boot_param_block
 
 file_name = "boot_record.py"
-ile_version = "0.1"
+ile_version = "0.11"
 changes = {
     "0.0": "Project directory structure set",
     "0.1": "Read Access to all parameter block values.",

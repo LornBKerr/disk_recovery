@@ -62,7 +62,6 @@ class DrivesTable:
         Example:
             ["sda.drv_img", "3/10/2026, 1:12:38 PM", "62.0 GB"]
         """
-
         def sortFunc(a):
             return a[0]
 

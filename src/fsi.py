@@ -12,7 +12,7 @@ License:    MIT, see file LICENSE
 Version:    0.1
 """
 
-file_name = "bpb.py"
+file_name = "fsi.py"
 ile_version = "0.1"
 changes = {
     "0.0": "Project directory structure set",
@@ -44,4 +44,4 @@ fsi_block = {
 
     "FSI_Trail_Sig": {"offset": 508, "size": 4, "type": "int"},
     # Value = 0xAA550000. Used to validate the ending of the FSI block.
-}
+

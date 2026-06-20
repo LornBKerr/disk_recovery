@@ -16,7 +16,7 @@ file_name = "bpb.py"
 ile_version = "0.1"
 changes = {
     "0.0": "Project directory structure set",
-    "0.1": "VFAST / FAT32 boot paramters block defined",
+    "0.1": "VFAST / FAT32 boot parameters block defined",
 }
 
 

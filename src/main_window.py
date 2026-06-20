@@ -17,7 +17,7 @@ from PySide6.QtWidgets import QMainWindow
 from ui_main_form import Ui_MainWindow
 
 file_name = "main_window.py"
-file_version = "0.1"
+file_version = "0.2"
 changes = {
     "0.0": "Project directory structure set",
     "0.1": "Show 'Drive select' tab.",
@@ -48,7 +48,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def initialize_tab_widget(self) -> None:
         """Set the tab names and number of tabs required."""
         self.tab_widget.setTabText(0, "Select Drive")
-
         self.tab_widget.setTabText(1, "BIOS Parameter Block")
         self.tab_widget.setTabVisible(1, False)
 

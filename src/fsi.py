@@ -44,4 +44,4 @@ fsi_block = {
 
     "FSI_Trail_Sig": {"offset": 508, "size": 4, "type": "int"},
     # Value = 0xAA550000. Used to validate the ending of the FSI block.
-
+}

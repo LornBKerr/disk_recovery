@@ -13,18 +13,19 @@ License:    MIT, see file LICENSE
 Version:    0.2
 """
 
+from bios_records import BiosRecords
 from bpb import boot_param_block
 
 file_name = "boot_record.py"
-ile_version = "0.11"
+ile_version = "0.2"
 changes = {
     "0.0": "Project directory structure set",
     "0.1": "Read Access to all parameter block values.",
-    "0.2": "Change return type of BS_VolId() from hex int to int.",
+    "0.2": "Change return type of BS_VolId() from 'hex int' to 'int'.",
 }
 
 
-class BootRecord:
+class BootRecord (BiosRecords):
     """
     Provide access to the boot record parameter block.
 
@@ -32,7 +33,6 @@ class BootRecord:
     backup boot sector. In the ideal world these will have the same
     contents.
     """
-
     def __init__(
         self, drive_image: [], boot_record_sector: int, sector_size: int = 512
     ) -> None:
@@ -47,20 +47,7 @@ class BootRecord:
         """
         self.bpb = boot_param_block
         """The parameter block definition."""
-        self.sector_data: [] = []
-        """The sector contents."""
-        self.sector_data_start: int = boot_record_sector * sector_size
-        """The initial byte address of the sector to be read."""
-
-        try:
-            with open(drive_image, "rb") as f:
-                f.seek(self.sector_data_start)
-                self.sector_data = f.read(512)
-
-        except FileNotFoundError:
-            print("Error: The file was not found.")
-        except Exception as e:
-            print(f"An error occurred: {e}")
+        super().__init__(drive_image, boot_record_sector, sector_size)
 
     def BS_JmpBoot(self):
         """

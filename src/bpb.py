@@ -56,7 +56,7 @@ boot_param_block = {
     "BPB_RsvdSecCount": {"offset": 0x0E, "size": 2, "type": "int"},
     # Number of reserved sectors. The boot record sectors are
     # included in this value.
-    "BPB_numFats": {"offset": 0x10, "size": 1, "type": "int"},
+    "BPB_NumFats": {"offset": 0x10, "size": 1, "type": "int"},
     # Number of File Allocation Tables
     "BPB_RootEntCnt": {"offset": 0x11, "size": 2, "type": "int"},
     # Number of root directory entries
